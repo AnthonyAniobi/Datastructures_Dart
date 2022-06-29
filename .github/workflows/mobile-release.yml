@@ -9,9 +9,9 @@ on:
       - main
 
 jobs:
-  # build:
-  #   name: build and release
-  #   runs-on: macos-latest
+  build:
+    name: build and release
+    runs-on: macos-latest
   #   steps:
   #     - uses: actions/checkout@v1
   #     - uses: actions/setup-java@v1
