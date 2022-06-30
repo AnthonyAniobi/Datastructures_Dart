@@ -1,13 +1,20 @@
 name: "build pipeline for web release"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # heroku actions
+      - uses: akhileshns/heroku-deploy@v3.12.12
 
 on: 
   push:
     branches:
-      - web-main
+    - web-main
     
   pull_request:
     branches:
-      - web-main
+    - web-main
 
 jobs:
   build:
@@ -16,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 16.x
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
         node-version: 16.x
     - name: Install dependencies
