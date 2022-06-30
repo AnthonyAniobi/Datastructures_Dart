@@ -1,9 +1,13 @@
 name: "build pipeline for beta release"
 
-on:
+on: 
+  push:
+    branches:
+    - web-main
+    
   pull_request:
     branches:
-      - main
+    - web-main
 
 jobs:
   build:
@@ -14,18 +18,3 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
-  #     - uses: subosito/flutter-action@v2
-  #       with:
-  #         # use flutter latest version
-  #         channel: 'stable'
-  #     - run: flutter pub get
-  #     - run: flutter test
-  #     - run: flutter build appbundle
-  #     # setup fastlane beta release
-  #     - uses: ruby/setup-ruby@v1
-  #       with:
-  #         ruby-version: '2.7.2'
-  #     - uses: maierj/fastlane-action@v2.2.0
-  #       with:
-  #         lane: 'beta'
-  #         subdirectory: 'android'
