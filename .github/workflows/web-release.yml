@@ -3,11 +3,11 @@ name: "build pipeline for web release"
 on: 
   push:
     branches:
-    - web-main
+      - web-main
     
   pull_request:
     branches:
-    - web-main
+      - web-main
 
 jobs:
   build:
