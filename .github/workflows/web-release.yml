@@ -1,4 +1,4 @@
-name: "build pipeline for beta release"
+name: "build pipeline for web release"
 
 on: 
   push:
