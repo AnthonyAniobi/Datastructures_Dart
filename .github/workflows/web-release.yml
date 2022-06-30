@@ -1,11 +1,4 @@
 name: "build pipeline for web release"
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      # heroku actions
-      - uses: akhileshns/heroku-deploy@v3.12.12
 
 on: 
   push:
