@@ -1,31 +1,19 @@
-name: "build pipeline for beta release"
+name: "build pipeline for backend"
 
-on:
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
+  branches:
+    - backend-main
 
 jobs:
   build:
-    name: build and release
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-java@v1
-  #       with:
-  #         java-version: '12.x'
-  #     - uses: subosito/flutter-action@v2
-  #       with:
-  #         # use flutter latest version
-  #         channel: 'stable'
-  #     - run: flutter pub get
-  #     - run: flutter test
-  #     - run: flutter build appbundle
-  #     # setup fastlane beta release
-  #     - uses: ruby/setup-ruby@v1
-  #       with:
-  #         ruby-version: '2.7.2'
-  #     - uses: maierj/fastlane-action@v2.2.0
-  #       with:
-  #         lane: 'beta'
-  #         subdirectory: 'android'
+      - uses: actions/checkout@v2
+      # heroku actions
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "solar-consult-backend-server"
+          heroku_email: "anthonyaniobi198@gmail.com"
+          # directory of the application
+          appdir: "backend"
