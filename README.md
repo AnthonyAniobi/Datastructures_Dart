@@ -1,4 +1,4 @@
-# SOLAR CONSULT
+# SOLAR CONSULT - MOBILE
 
 ### Sizing solar installation with ease
 
