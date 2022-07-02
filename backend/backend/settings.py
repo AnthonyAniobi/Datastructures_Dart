@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
+    'post.apps.PostConfig',
 ]
 
 MIDDLEWARE = [
@@ -69,11 +70,11 @@ if(settings.DEBUG):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'anthony',
+            'NAME': 'solar_consult', #database name
             'USER': 'postgres',
             'PASSWORD': 'password',
             'HOST': '127.0.0.1',
-            'PORT': '',
+            'PORT': '5432',
         }
     }
 else:
