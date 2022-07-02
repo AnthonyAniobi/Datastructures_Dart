@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+from django.conf import settings
 
 # load environment variables
 
@@ -27,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -63,12 +65,29 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if(settings.DEBUG):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'anthony',
+            'USER': 'postgres',
+            'PASSWORD': 'password',
+            'HOST': '127.0.0.1',
+            'PORT': '',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'anthony',
+            'USER': 'postgres',
+            'PASSWORD': 'password',
+            'HOST': '127.0.0.1',
+            'PORT': '',
+
+        }
+    }
 
 
 # Password validation
