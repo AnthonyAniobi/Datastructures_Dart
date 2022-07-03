@@ -8,3 +8,6 @@ class Post(models.Model):
     created_on = models.DateField(
         verbose_name='time created', auto_now_add=True)
     edited_on = models.DateField(verbose_name='time edited', auto_now=True)
+
+    def __str__(self) -> str:
+        return self.title
