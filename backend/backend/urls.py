@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from .views import home_page
 
 
 if(settings.DEBUG):
@@ -13,6 +14,7 @@ else:
     ]
 
 urlpatterns = urlpatterns + [
+    path('', home_page),
     path('api-auth', include('rest_framework.urls')),
     path('api/', include('api.urls')),
 ]
