@@ -1,6 +1,5 @@
-# SOLAR CONSULT
+# DATASTRUCTURES IN DART
 
-### Sizing solar installation with ease
+### Solving alorithms using dart
 
-This is an application based on the playstore application on
-[Playstore](https://play.google.com/store/apps/details?id=com.aniobianthony.solarconsult)
+this is based on the book `Data Structures and Algorithms in Dart by Jonathan Sande`
