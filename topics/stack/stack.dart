@@ -1,6 +1,8 @@
 class Stack<E> {
-  Stack() : _storage = <E>[];
   final List<E> _storage;
+  Stack() : _storage = <E>[];
+
+  Stack.of(Iterable<E> elements) : _storage = List<E>.of(elements);
 
   void push(E element) => _storage.add(element);
 

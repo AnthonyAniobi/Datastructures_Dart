@@ -1,10 +1,10 @@
+import 'problems/balance_parenthesis.dart';
+import 'problems/reverse_a_list.dart';
 import 'stack.dart';
 
 void main(List<String> args) {
-  final stack = Stack<int>();
-  stack.push(5);
-  stack.push(7);
-  stack.push(8);
-  stack.push(9);
-  print(stack);
+  String equation = 'h((e))llo(world)()';
+  print(balanceParenthesis(equation));
+  equation = '(hello world';
+  print(balanceParenthesis(equation));
 }
