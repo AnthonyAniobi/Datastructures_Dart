@@ -1,11 +1,11 @@
-import 'node.dart';
+import 'linked_list.dart';
 
 void main(List<String> args) {
-  final node1 = Node(value: 1);
-  final node2 = Node(value: 2);
-  final node3 = Node(value: 3);
-  node1.next = node2;
-  node2.next = node3;
+  final list = LinkedList.of([1, 2, 3, 4, 5, 6]);
 
-  print(node1);
+  for (var x in list) {
+    print(x);
+  }
+
+  print(list);
 }
