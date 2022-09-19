@@ -9,4 +9,6 @@ void main(List<String> args) {
   print('list before dequeue: $list');
   list.dequeue();
   print('list after dequeue: $list');
+  final peeker = list.peek;
+  print('peeker is looking at: $peeker');
 }
