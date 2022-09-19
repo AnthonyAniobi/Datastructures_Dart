@@ -17,4 +17,7 @@ class QueueList<E> implements Queue<E> {
 
   @override
   E? get peek => (_list.isEmpty) ? null : _list.first;
+
+  @override
+  String toString() => _list.toString();
 }
